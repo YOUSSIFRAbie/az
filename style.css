@@ -1,0 +1,62 @@
+div {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid red;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation-name: qaz;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: unset;
+    transform-origin: center;
+}
+div::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid blue;
+    border-radius: 50%;
+    border-left-color: transparent;
+}
+div::after {
+    content: '';
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid green;
+    border-radius: 50%;
+    border-right-color: transparent;
+}
+@keyframes qaz {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    30% {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+    60% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    90% {
+        transform: translate(-50%, -50%) rotate(290deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+
+    }
+}
+div:hover {
+    animation-play-state: paused;
+}
